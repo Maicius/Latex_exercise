@@ -1,0 +1,101 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage{cvpr}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Include other packages here, before hyperref.
+
+% If you comment hyperref and then uncomment it, you should delete
+% egpaper.aux before re-running latex.  (Or just hit 'q' on the first latex
+% run, let it finish, and you should be clear).
+\usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
+
+% \cvprfinalcopy % *** Uncomment this line for the final submission
+
+\def\cvprPaperID{****} % *** Enter the CVPR Paper ID here
+\def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
+
+% Pages are numbered in submission mode, and unnumbered in camera-ready
+\ifcvprfinal\pagestyle{empty}\fi
+\begin{document}
+
+%%%%%%%%% TITLE
+\title{\LaTeX\ Semantic Saliency Detection in Image}
+
+\author{First Author\\
+Institution1\\
+Institution1 address\\
+{\tt\small firstauthor@i1.org}
+% For a paper whose authors are all at the same institution,
+% omit the following lines up until the closing ``}''.
+% Additional authors and addresses can be added with ``\and'',
+% just like the second author.
+% To save space, use either the email address or home page, not both
+\and
+Second Author\\
+Institution2\\
+First line of institution2 address\\
+{\tt\small secondauthor@i2.org}
+}
+
+\maketitle
+%\thispagestyle{empty}
+
+%%%%%%%%% ABSTRACT
+\begin{abstract}
+    
+\end{abstract}
+
+%%%%%%%%% BODY TEXT
+\section{Introduction}
+
+Much attention has been paid to visual saliency of image, but it is easy to be affected by visual features like size, color, localization and so on.
+In some cases, visually salient objects are semantically important, especially when there are only a few objects in an image.
+However in other cases, some objects are easily to be ignored according to visual saliency.
+Figure~\ref{fig:compare} shows the difference between visually salient objects and semantically salient objects, in which two important persons and the table are omitted in the salient object detection.
+Specifically, stuff objects \cite{Holger18} are usually inconspicuous, but they are meaningful to help people understand the semantic information of the image.
+
+In order to understand the content of an image better, we introduce this concept: semantic saliency, which focuses on semantic information like what are meaningful in this image, where is the place and what are the relationships between the meaningful objects.
+In this paper, we aim to detecting semantically salient object and exporting their segmentations.
+
+We address the semantically salient object detection task on the basis of saliency detection and object detection.
+Firstly, we export the instance segmentations resulting from the Mask R-CNN model\cite{He17} and saliency map using \cite{Pan_2016_CVPR}.
+Secondly, we construct a MRF-RNN to predict the semantically objects.
+
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=\linewidth]{143636}
+\end{center}
+\vspace{-1cm}
+   \caption{(a) original image; (b) panoptic segmentation; (c) visually salient object detection; (d) fixation points; (e) object detection according to image captions; (f) image captions}
+   \label{fig:compare}
+\end{figure}
+%-------------------------------------------------------------------------
+\section{Related Works}
+%Object Detection
+
+%Salient Object Detection
+
+%Image Caption
+
+%Visual Question Answering
+
+\section{Method}
+
+
+
+\section{Experiments}
+
+
+%-------------------------------------------------------------------------
+\section{Conclusion}
+
+{\small
+\bibliographystyle{ieee}
+\bibliography{egbib}
+}
+\end{document}
